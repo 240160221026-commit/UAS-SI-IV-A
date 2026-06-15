@@ -1,0 +1,482 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #fef7f0;
+    color: #2d2a2a;
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1e6db;
+}
+::-webkit-scrollbar-thumb {
+    background: #d4af7a;
+    border-radius: 10px;
+}
+
+/* Navigation */
+nav {
+    background: #fffaf5;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #b87c4f;
+    letter-spacing: -0.5px;
+}
+.logo i {
+    color: #e4a374;
+    margin-right: 8px;
+}
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+.nav-links a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #4a3b2c;
+    transition: 0.3s;
+}
+.nav-links a:hover {
+    color: #c28a5c;
+}
+.menu-icon {
+    display: none;
+    font-size: 1.7rem;
+    cursor: pointer;
+    color: #b87c4f;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #f9ede2 0%, #f7e5d6 100%);
+    padding: 4rem 5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.hero-text {
+    flex: 1;
+    min-width: 260px;
+}
+.hero-text h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #4e3622;
+    line-height: 1.2;
+}
+.hero-text p {
+    margin: 1rem 0 1.5rem;
+    color: #5f4c38;
+    font-size: 1.1rem;
+}
+.btn {
+    background: #c28a5c;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    display: inline-block;
+}
+.btn:hover {
+    background: #a86f45;
+    transform: translateY(-2px);
+}
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+.hero-image img {
+    max-width: 100%;
+    width: 380px;
+    border-radius: 50px;
+    box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+}
+
+/* Services Section */
+.services {
+    padding: 5rem 5%;
+    background: white;
+}
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #3b2c1f;
+    margin-bottom: 3rem;
+    position: relative;
+}
+.section-title::after {
+    content: '';
+    width: 70px;
+    height: 4px;
+    background: #d4af7a;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 4px;
+}
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+.service-card {
+    background: #fffbf7;
+    border-radius: 28px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: all 0.3s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+    border: 1px solid #f3e7dd;
+}
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: #eedbcb;
+    box-shadow: 0 20px 30px rgba(0,0,0,0.08);
+}
+.service-card i {
+    font-size: 2.5rem;
+    color: #c28a5c;
+    margin-bottom: 1rem;
+}
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.service-card p {
+    color: #7f6a58;
+    margin: 0.7rem 0;
+}
+.price {
+    font-weight: 700;
+    color: #b87c4f;
+    font-size: 1.2rem;
+}
+
+/* Booking Form Section */
+.booking {
+    background: #fef5ed;
+    padding: 5rem 5%;
+}
+.booking-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 40px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+}
+.form-group {
+    margin-bottom: 1.2rem;
+}
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #3b2c1f;
+}
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px 18px;
+    border: 1px solid #e6d5c5;
+    border-radius: 30px;
+    font-size: 1rem;
+    background: #fffcf9;
+    transition: 0.2s;
+}
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: #c28a5c;
+    box-shadow: 0 0 0 2px rgba(194,138,92,0.2);
+}
+.btn-book {
+    background: #b87c4f;
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+.message-feedback {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 5rem 5%;
+    background: white;
+}
+.testimonial-slider {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+.testimonial-item {
+    background: #fffaf5;
+    border-radius: 30px;
+    padding: 2rem;
+    max-width: 320px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+    border: 1px solid #f3e2d4;
+}
+.testimonial-item i {
+    font-size: 2rem;
+    color: #d4af7a;
+    margin-bottom: 0.7rem;
+}
+.testimonial-text {
+    font-style: italic;
+    color: #4a3b2c;
+}
+.customer-name {
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #b87c4f;
+}
+
+/* Footer */
+footer {
+    background: #2e241e;
+    color: #d9c5b0;
+    padding: 2rem 5%;
+    text-align: center;
+}
+.social-icons {
+    margin-bottom: 1rem;
+}
+.social-icons a {
+    color: #d9c5b0;
+    margin: 0 10px;
+    font-size: 1.3rem;
+    transition: 0.2s;
+    display: inline-block;
+}
+.social-icons a:hover {
+    color: #e4a374;
+    transform: scale(1.1);
+}
+
+/* Toast Notification */
+.toast-notif {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #2c3e2f;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 500;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    opacity: 0;
+    visibility: hidden;
+}
+.toast-notif.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .menu-icon {
+        display: block;
+    }
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+    .hero-image img {
+        width: 280px;
+    }
+}
+
+/* Tambahan CSS untuk fitur penilaian */
+.add-review-container {
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+    background: linear-gradient(135deg, #fffaf5, #fff5ed);
+    padding: 2rem;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border: 1px solid #f3e2d4;
+}
+
+.review-title {
+    text-align: center;
+    color: #4e3622;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.rating-input {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.star-rating {
+    font-size: 2.2rem;
+    cursor: pointer;
+    color: #ddd;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.star-rating:hover,
+.star-rating.active {
+    color: #ffc107;
+    text-shadow: 0 0 5px rgba(255,193,7,0.5);
+    transform: scale(1.1);
+}
+
+.btn-submit-review {
+    background: #8b6b4d;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.btn-submit-review:hover {
+    background: #6d523a;
+}
+
+.review-message {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.6rem;
+    color: #5a4230;
+    margin: 2rem 0 1.5rem 0;
+}
+
+.testimonial-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #f9f0e8;
+    border-radius: 60px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 0.5rem 1.5rem;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #b87c4f;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #7a6248;
+}
+
+/* Rating stars di testimonial */
+.testimonial-rating {
+    margin: 8px 0;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.testimonial-rating .star-filled {
+    color: #ffc107;
+}
+
+.testimonial-rating .star-empty {
+    color: #ddd;
+}
+
+.testimonial-date {
+    font-size: 0.75rem;
+    color: #aaa;
+    margin-top: 8px;
+}
+
+/* Delete button */
+.delete-review {
+    background: none;
+    border: none;
+    color: #d4a373;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-top: 8px;
+    opacity: 0.6;
+    transition: 0.2s;
+}
+
+.delete-review:hover {
+    opacity: 1;
+    color: #c0392b;
+}
+
+/* Animasi untuk review baru */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.testimonial-item {
+    animation: fadeInUp 0.4s ease;
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Glamour & Co. - Salon & Beauty Center</title>
+    <!-- Font Awesome 6 (Free Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <i class="fas fa-spa"></i> Glamour & Co.
+        </div>
+        <div class="menu-icon" id="menuIcon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#services">Layanan</a></li>
+            <li><a href="#booking">Booking</a></li>
+            <li><a href="#testimonials">Testimoni</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <h1>Pancarkan Pesonamu</h1>
+            <p>Rasakan pengalaman salon mewah dengan sentuhan personal. Dari potongan rambut hingga perawatan wajah, kami siap memanjakanmu.</p>
+            <button class="btn" id="exploreBtn">Jelajahi Layanan →</button>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Salon treatment">
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2 class="section-title">✨ Layanan Premium Kami</h2>
+        <div class="service-grid" id="serviceGrid"></div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+        <div class="booking-container">
+            <h2 class="section-title" style="margin-bottom: 1.5rem;">📅 Buat Janji Temu</h2>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label><i class="fas fa-user"></i> Nama Lengkap</label>
+                    <input type="text" id="customerName" placeholder="Contoh: Sarah Wijaya" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-phone-alt"></i> Nomor WhatsApp</label>
+                    <input type="tel" id="customerPhone" placeholder="0812-3456-7890" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-cut"></i> Pilih Layanan</label>
+                    <select id="serviceSelect" required>
+                        <option value="">-- Pilih Layanan --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-calendar-day"></i> Tanggal</label>
+                    <input type="date" id="bookingDate" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-clock"></i> Jam (09:00 - 20:00)</label>
+                    <input type="time" id="bookingTime" min="09:00" max="20:00" step="1800" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-comment-dots"></i> Catatan (opsional)</label>
+                    <textarea id="notes" rows="2" placeholder="Misal: alergi produk tertentu..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-book">Konfirmasi Booking</button>
+                <div class="message-feedback" id="formMessage"></div>
+            </form>
+        </div>
+    </section>
+
+   <!-- Testimonials Section dengan fitur penilaian -->
+<section id="testimonials" class="testimonials">
+    <h2 class="section-title">💬 Apa Kata Mereka?</h2>
+    
+    <!-- Form untuk menambahkan testimoni & penilaian -->
+    <div class="add-review-container">
+        <h3 class="review-title">✍️ Berikan Penilaian & Komentar Anda</h3>
+        <form id="reviewForm">
+            <div class="form-group">
+                <label><i class="fas fa-user"></i> Nama Anda</label>
+                <input type="text" id="reviewerName" placeholder="Masukkan nama Anda" required>
+            </div>
+            <div class="form-group">
+                <label><i class="fas fa-star"></i> Penilaian (Rating)</label>
+                <div class="rating-input">
+                    <span class="star-rating" data-value="1">★</span>
+                    <span class="star-rating" data-value="2">★</span>
+                    <span class="star-rating" data-value="3">★</span>
+                    <span class="star-rating" data-value="4">★</span>
+                    <span class="star-rating" data-value="5">★</span>
+                    <input type="hidden" id="ratingValue" value="0">
+                </div>
+                <small style="color: #7f6a58;">Klik bintang untuk memberi penilaian</small>
+            </div>
+            <div class="form-group">
+                <label><i class="fas fa-comment-dots"></i> Komentar Anda</label>
+                <textarea id="reviewText" rows="3" placeholder="Ceritakan pengalaman Anda di salon kami..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-submit-review">Kirim Penilaian</button>
+        </form>
+        <div id="reviewMessage" class="review-message"></div>
+    </div>
+
+    <!-- Daftar Testimoni & Penilaian -->
+    <h3 class="section-subtitle">📋 Testimoni Pelanggan</h3>
+    <div class="testimonial-stats" id="testimonialStats"></div>
+    <div class="testimonial-slider" id="testimonialContainer"></div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p>© 2025 Glamour & Co. Salon – Kecantikan & Relaksasi Sejati</p>
+        <p style="font-size: 0.8rem; margin-top: 8px;">✨ Front End Project – Mata Kuliah Desain Web ✨</p>
+    </footer>
+
+    <div id="toastMsg" class="toast-notif">✨ Booking berhasil!</div>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
