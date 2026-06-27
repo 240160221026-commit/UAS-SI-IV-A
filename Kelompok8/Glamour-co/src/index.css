@@ -1,0 +1,198 @@
+:root {
+  --primary: #db2777;
+  --primary-hover: #be185d;
+  --bg-app: #fdf2f8;
+  --card-bg: #ffffff;
+  --text-main: #1f2937;
+  --success: #10b981;
+  --warning: #f59e0b;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-app);
+  color: var(--text-main);
+}
+
+.app-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.app-header h1 {
+  color: var(--primary);
+  margin-bottom: 5px;
+}
+
+.app-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .app-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Form Styles */
+.form-section, .list-section {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-submit {
+  background-color: var(--primary);
+  color: white;
+  padding: 12px 20px;
+  flex: 1;
+}
+
+.btn-submit:hover { background-color: var(--primary-hover); }
+
+.btn-cancel { background-color: #6b7280; color: white; padding: 12px 15px;}
+
+/* Controls & Filters */
+.controls-container {
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.filter-buttons button {
+  padding: 8px 16px;
+  background-color: #e5e7eb;
+}
+
+.filter-buttons button.active {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Item List / Cards */
+.salon-item {
+  border-left: 5px solid var(--warning);
+  background: #f9fafb;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.salon-item.completed {
+  border-left-color: var(--success);
+  opacity: 0.8;
+}
+
+.item-info h3 { margin: 0 0 5px 0; }
+.service-tag { margin: 0; font-size: 0.9rem; color: #4b5563; font-weight: bold;}
+.price-tag { margin: 5px 0; color: var(--primary); font-weight: 600; }
+.date-tag { font-size: 0.8rem; color: #9ca3af; }
+
+.item-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.btn-status { padding: 6px 12px; font-size: 0.85rem; color: white;}
+.btn-done { background-color: var(--success); }
+.btn-undone { background-color: var(--warning); }
+.btn-edit { background-color: #3b82f6; color: white; padding: 6px 12px; font-size: 0.85rem;}
+.btn-delete { background-color: #ef4444; color: white; padding: 6px 12px; font-size: 0.85rem;}
+.empty-message { text-align: center; color: #6b7280; margin-top: 30px; }
+
+/* Style Baru untuk Badge Status */
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.badge-success {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+.badge-warning {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+/* Penyesuaian Tombol Aksi yang Baru */
+.btn-pending-status {
+  background-color: #10b981; /* Hijau untuk aksi menyelesaikan */
+  color: white;
+  padding: 8px;
+  font-size: 0.85rem;
+}
+.btn-pending-status:hover { background-color: #059669; }
+
+.btn-completed-status {
+  background-color: #f59e0b; /* Oranye untuk membatalkan */
+  color: white;
+  padding: 8px;
+  font-size: 0.85rem;
+}
+.btn-completed-status:hover { background-color: #d97706; }
+
+/* Rapikan layout tombol edit & hapus agar sejajar horisontal */
+.item-actions {
+  min-width: 160px;
+}
