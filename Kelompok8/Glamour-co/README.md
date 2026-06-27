@@ -29,7 +29,8 @@ Berikut adalah daftar penanggung jawab proyek aplikasi GlowSpace:
 ---
 
 ## 🗃️ Struktur Objek Data (Data Structure)
-Setiap entri transaksi atau antrean di dalam aplikasi dipetakan menggunakan struktur data objek dengan format berikut:
+Setiap entri transaksi atau antrean di dalam aplikasi dipetakan menggunakan struktur 
+data objek dengan format berikut:
 
 ```json
 {
@@ -40,3 +41,5 @@ Setiap entri transaksi atau antrean di dalam aplikasi dipetakan menggunakan stru
   "isCompleted": false,
   "bookingDate": "27/06/2026, 11.16.28 WIB"
 }
+
+## Link Aplikasi : https://glamour-fnhba7yb1-kelompok-8salon.vercel.app/
